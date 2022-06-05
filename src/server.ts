@@ -1,13 +1,5 @@
-import "reflect-metadata";
-import express from 'express';
-import './database';
-import { routes } from "./routes";
+import { app } from './app'
 
-const app  = express();
+const PORT = process.env.API_PORT
 
-app.use(express.json());
-app.use(routes)
-
-app.listen(3000, () => {
-    console.log("Servidor Rodando")
-});
+app.listen(PORT, () => console.log(`Server runing at port: ${PORT}`))
